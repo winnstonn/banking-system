@@ -5,6 +5,11 @@ import (
 	"github.com/banking-system/internal/repository"
 )
 
+type IUserService interface {
+	Login() string
+	RetrieveData() string
+}
+
 type UserService struct {
 	repo  repository.IDatabase
 	cache cache.ICache
@@ -15,12 +20,4 @@ func NewUserService(repoi repository.IDatabase, ci cache.ICache) *UserService {
 		repo:  repoi,
 		cache: ci,
 	}
-}
-
-func (u *UserService) Login() string {
-	return u.repo.Login()
-}
-
-func (u *UserService) RetrieveData() string {
-	return u.cache.RetrieveData()
 }

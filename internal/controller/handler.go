@@ -2,6 +2,7 @@ package controller
 
 import (
 	"encoding/json"
+	"log"
 	"net/http"
 
 	"github.com/banking-system/middleware"
@@ -26,6 +27,8 @@ func (c *Controller) Transfer(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
+
+	log.Println(c.transactionService.Transfer())
 
 	tresp := &TransferResponse{
 		IsSuccess:    true,
