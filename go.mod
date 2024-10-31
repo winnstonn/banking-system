@@ -1,10 +1,9 @@
 module github.com/banking-system
 
-go 1.22.6
+go 1.23.2
 
 require (
 	github.com/gorilla/mux v1.8.1
-	github.com/lib/pq v1.10.9
 	github.com/redis/go-redis/v9 v9.6.1
 	github.com/rs/cors v1.11.0
 	github.com/spf13/viper v1.19.0

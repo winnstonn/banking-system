@@ -7,7 +7,6 @@ import (
 	"log"
 
 	"github.com/banking-system/internal/config"
-	_ "github.com/lib/pq"
 )
 
 type IDatabase interface {
